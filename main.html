@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">	
+        <link rel="stylesheet" href="/css/all.css">	
+        <link rel="stylesheet" href="/css/wisdom.css">	        
+        <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+		<title>Wisdom - Junior Home</title>
+		<style>
+		body {
+			background-color:gainsboro;                       
+            font-size:13px;            
+        }
+        .cropped1 {
+            width: 80px; /* width of container */
+            height: 80px; /* height of container */
+            object-fit: cover;
+            object-position: 20% 0px;             
+            border: 3px solid whitesmoke;
+        } 
+        .cropped1:hover{
+            border: 3px solid cyan;
+            cursor:pointer;
+        }                     
+        </style>
+        <script src="/js/jquery-3.4.1.min.js"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+	</head>
+    <body>
+        <div class="wisbackground">
+            <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #003366" >
+                <div class="container-fluid">
+                <span class="navbar-brand" id="sidebarCollapse" style='z-index:999;color:white;margin-left:-10px;cursor:pointer'><img  src="/images/SJCLogoNew.png" style="height: 40px; padding-right: 10px;">Wisdom</span>                
+                    <span class="ml-auto">                       
+                    </span>                                             
+                </div>
+            </nav>
+            <div style='color:whitesmoke;'>
+                <div class='container'>
+                    <div class='row justify-content-center justify-content-md-between'>
+                        <div class='col-sm-auto'>
+                            <p class='text-center' style='font-size:22px;'><b>Good Morning</b></p>
+                        </div>
+                        <div class='col-sm-auto'>
+                            <p class='text-center' style='font-size:22px'><b>Sunday 12 March</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wisbackground">
+
+            <div class="container">
+                <div class="row justify-content-center">
+            <div class="col text-center">
+        <div class="card top-link" style='width:110px;background-color:#003366' onclick="window.open('http://officelogin.sjc.wa.edu.au')">
+            <img src='/images/office.png' style='height:50px;padding-bottom:5px'>                           
+            <p class="card-text mt-2" style='color:whitesmoke'>Office 365</p>
+        </div>        
+    </div>
+                <div class="col text-center">
+        <div class="card top-link" style='width:110px;background-color:#003366' onclick="window.open('https://www.google.com.au')">
+            <img src='/images/google.png' style='height:50px;padding-bottom:5px'>                           
+            <p class="card-text mt-2" style='color:whitesmoke'>Search</p>
+        </div>        
+    </div>
+                <div class="col text-center">
+        <div class="card top-link" style='width:110px;background-color:#003366' onclick="window.open('https://readingeggs.com.au/')">
+            <img src='/images/readingeggs.png' style='height:50px;padding-bottom:5px'>                           
+            <p class="card-text mt-2" style='color:whitesmoke'>Reading Eggs</p>
+        </div>        
+    </div>
+                <div class="col text-center">
+        <div class="card top-link" style='width:110px;background-color:#003366' onclick="window.open('https://www.studyladder.com.au')">
+            <img src="/images/studyladder.png" style="height: 50px;padding-bottom:5px;">                           
+            <p class="card-text mt-2" style='color:whitesmoke'>Study Ladder</p>
+        </div>        
+    </div>
+                <div class="col text-center">
+        <div class="card top-link" style='width:110px;background-color:#003366' onclick="openHome()">
+            <i class="fad fa-link"  style='color:whitesmoke;font-size:45px;padding-bottom:5px'></i>                           
+            <p class="card-text mt-2" style='color:whitesmoke'>Links</p>
+        </div>        
+    </div>
+        </div>
+            </div>
+            <div>
+                <div class="container pt-3 pb-3">
+    <div class="row justify-content-center">    
+       
+    <div class="col text-center">
+        <img class='rounded-circle cropped1' src='/images/staff/BRORIG.bmp' alt="" onclick="openLinks(265)">
+        <h6 style='color:whitesmoke'>Mrs Landells</h6>
+    </div>        
+       
+    <div class="col text-center">
+        <img class='rounded-circle cropped1' src='/images/staff/MORJAR.bmp' alt="" onclick="openLinks(30)">
+        <h6 style='color:whitesmoke'>Mr Morcom</h6>
+    </div>        
+       
+    <div class="col text-center">
+        <img class='rounded-circle cropped1' src='/images/staff/PALFCM.bmp' alt="" onclick="openLinks(74)">
+        <h6 style='color:whitesmoke'>Mrs Palfrey</h6>
+    </div>        
+        </div>
+</div>
+            </div>
+
+        </div>
+        
+        <div>
+            <div class="container p-2" id="links">
+                <div class="row mb-2 " onclick="window.open('https://auhosted1.renlearn.com.au/1439832/','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <i class="fad fa-book-reader"  style='color:whitesmoke;font-size:45px;padding-bottom:5px'></i></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Accelerated Reader</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('https://oars.acer.edu.au/st-joseph-s-college','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/acer.png' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>ACER Testing</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('https://wa.bpth.app/','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/brightpath.png' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Brightpath</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('https://school.eb.com.au/login?username=ceowabrit&amp;password=schoolwa','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <i class="fad fa-book-open"  style='color:whitesmoke;font-size:45px;padding-bottom:5px'></i></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Britannica School</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('https://saml-in3.clickview.com.au/Shibboleth.sso/CEWA','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <i class="fas fa-play"  style='color:orange;font-size:45px;padding-bottom:5px'></i></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Clickview</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('https://code.org/','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/codeorg.png' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Code.Org</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('https://digital-classroom.nma.gov.au/','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <i class="fad fa-link"  style='color:whitesmoke;font-size:45px;padding-bottom:5px'></i></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Digital Classroom</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('https://soraapp.com/library/nswebooksau','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <i class="fad fa-book"  style='color:whitesmoke;font-size:45px;padding-bottom:5px'></i></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>eBooks</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('https://groklearning.com/','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/grok.png' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Grok Academy</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('http://lesson.localnetwork.zone/','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <i class="fad fa-laptop"  style='color:whitesmoke;font-size:45px;padding-bottom:5px'></i></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Lesson Zone</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('https://sjcwa.softlinkhosting.com.au/oliver/OpacLogin?corporation=StJosephsAlbany&amp;sso=false','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <i class="fad fa-books"  style='color:whitesmoke;font-size:45px;padding-bottom:5px'></i></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Library Search</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('https://app.mangahigh.com/en-au/login','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/mangahigh.png' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Mangahigh</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('https://login.mathletics.com/','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/mathletics.png' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Mathletics</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('https://microbit.org/projects/make-it-code-it/','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/micro-bit-logo.png' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Microbit</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('https://hub.oxforddigital.com.au/library.html?login_type=external-owl-student','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/oxford.jpg' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Oxford Digital</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('https://www.religiousliteracy.com/','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <i class="fad fa-church"  style='color:whitesmoke;font-size:45px;padding-bottom:5px'></i></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Religious Literacy Test</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('https://scratch.mit.edu/','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/scratch.png' style='height:70px;'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Scratch</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('https://learn.sjc.wa.edu.au/','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/seqtalearn.png' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>SEQTA Learn</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('https://online.fireflyeducation.com.au/services/student_login/soundwaves','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/soundwaves.png' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Soundwaves</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('https://au.splashlearn.com/student','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/splashlearn.jpg' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Splash Learn</h6>    
+    </div>
+</div>
+<div class="row mb-2 " onclick="window.open('https://www.tinkercad.com/','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#003366;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/tinkercad.png' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Tinkercad</h6>    
+    </div>
+</div>
+
+            </div>
+        </div>
+    </body>
+    <script>
+    function openLinks(teacher){
+        $.get('/junior/links/teacher/'+teacher,function(data){
+            $('#links').html(data);
+        });
+    }
+    function openHome(){
+        $.get('/junior/links/home',function(data){
+            $('#links').html(data);
+        });
+    }
+    </script>
+</html>
