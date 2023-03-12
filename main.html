@@ -32,6 +32,7 @@
         <script src="/js/jquery-3.4.1.min.js"></script>
         <script src="/js/popper.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/getday.js"> defer</script>
 	</head>
     <body>
         <div class="wisbackground">
@@ -65,20 +66,9 @@
                             </script> 
                         </div>
                         <div class='col-sm-auto'>
-                            <p class='text-center' style='font-size:22px'><b id="date"></b></p>
-                            <script>
-                                let date = new Date();
-                                let day = date.getDate ();
-                                let weekday = date.getDay ();
-                                let month = date.getMonth() + 1;
-                                let year = date.getFullYear();
-                                let hour = date.getHours();
-                                let minute = date.getMinutes();
-                                let second = date.getSeconds();
-                                
-                                document.getElementById("date").innerHTML = `${weekday}, ${day} ${month}`;
-                                </script>
+                            <p class='text-center' style='font-size:22px'><b class="date"></b></p> 
                         </div>
+
                     </div>
                 </div>
             </div>
