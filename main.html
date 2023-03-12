@@ -49,7 +49,19 @@
                             <p class='text-center' style='font-size:22px;'><b>Good Evening</b></p>
                         </div>
                         <div class='col-sm-auto'>
-                            <p class='text-center' style='font-size:22px'><b>Sunday 12 March</b></p>
+                            <p class='text-center' style='font-size:22px'><b id="date"></b></p>
+                            <script>
+                                let date = new Date();
+                                let day = date.getDate
+                                let weekday = date.getDay();
+                                let month = date.getMonth() + 1;
+                                let year = date.getFullYear();
+                                let hour = date.getHours();
+                                let minute = date.getMinutes();
+                                let second = date.getSeconds();
+                                
+                                document.getElementById("date").innerHTML = `${weekday} ${day} ${month}`;
+                                </script>
                         </div>
                     </div>
                 </div>
