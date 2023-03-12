@@ -46,7 +46,23 @@
                 <div class='container'>
                     <div class='row justify-content-center justify-content-md-between'>
                         <div class='col-sm-auto'>
-                            <p class='text-center' style='font-size:22px;'><b>Good Evening</b></p>
+                            <p class='text-center' style='font-size:22px;'><b id="greeting"></b></p>
+                            <script>
+                                var myDate = new Date();
+                                var hrs = myDate.getHours();
+                            
+                                var greet;
+                            
+                                if (hrs < 12)
+                                    greet = 'Good Morning';
+                                else if (hrs >= 12 && hrs <= 17)
+                                    greet = 'Good Afternoon';
+                                else if (hrs >= 17 && hrs <= 24)
+                                    greet = 'Good Evening';
+                            
+                                document.getElementById('greeting').innerHTML =
+                                    ' + greet +';
+                            </script> 
                         </div>
                         <div class='col-sm-auto'>
                             <p class='text-center' style='font-size:22px'><b id="date"></b></p>
