@@ -1,0 +1,840 @@
+i.course:hover {
+    cursor:pointer;
+    color:orange;
+    -webkit-transform: scale(1.3);
+}
+i.assess:hover {
+    cursor:pointer;
+    color:green;
+    -webkit-transform: scale(1.3);
+}
+i.deletebin:hover {
+    cursor:pointer;
+    color:red;
+    -webkit-transform: scale(1.3);
+}
+i.addplus:hover {
+    cursor:pointer;
+    color:green;
+    -webkit-transform: scale(1.3);
+}
+.duty:hover {
+    color:cyan;
+    cursor:pointer;
+    -webkit-transform: scale(1.3);
+}
+.wisduty:hover {
+    color:cyan;
+    cursor:pointer;
+    -webkit-transform: scale(1.2);
+}
+.wiscalendar:hover {
+    color:fuchsia;
+    cursor:pointer;
+    -webkit-transform: scale(1.2);
+}
+.wiscog:hover {
+    color:red;
+    cursor:pointer;
+    -webkit-transform: scale(1.2);
+}
+.wiscalendaredit:hover {
+    color:lime;
+    cursor:pointer;
+    -webkit-transform: scale(1.2);
+}
+i.timetable:hover {          
+    -webkit-transform: scale(1.3);
+}
+i.arrow:hover {
+    cursor:pointer;          
+    -webkit-transform: scale(1.3);
+}
+.feelings:hover {    
+    cursor:pointer;           
+    -webkit-transform: scale(1.2);
+}
+.item {
+    position:relative;
+    padding-top:20px;
+    display:inline-block;
+}
+.item:hover{
+    -webkit-transform: scale(1.1); 
+}
+i.thumbhov:hover{
+    -webkit-transform: scale(1.2); 
+}
+.notify-badge{
+    position: absolute;
+    right:26px;
+    top:11px;
+    background:red;
+    text-align: center;
+    border-radius: 30px 30px 30px 30px;
+    color:white;
+    padding:1px 5px;
+    font-size:10px;
+    border: 2px solid white;
+}
+.menu-btn-active{
+    font-size:20px;
+    border-bottom: 1px solid #003366;            
+}
+.menu-btn{
+    color: gray;
+    font-size: 20px;
+    cursor:pointer;            
+}
+.menu-btn:hover{
+    color: #003366;                                    
+}
+
+.top-button{padding: 13px 5px 13px 5px; margin:0px 10px 0px 10px; border-bottom: 3px solid transparent;display:inline-block}
+.top-button-lime:hover{            
+    border-bottom: 3px solid lime;
+    -webkit-transform: scale(1.1);
+    background:#004488;
+}
+.top-button-orange:hover{
+    border-bottom: 3px solid orange;
+    -webkit-transform: scale(1.1);
+    background:#004488;
+}
+.top-button-cyan:hover{
+    border-bottom: 3px solid cyan;
+    -webkit-transform: scale(1.1);
+    background:#004488;
+}
+.shadowthis {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+position:relative;
+}
+.top-link{border:none;display:inline-block;padding:12px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;text-align:center;cursor:pointer;white-space:nowrap}							
+.top-link:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}
+td.fixedsize { 	
+border-spacing: 0;
+height: 100px;
+width: 100px;
+margin: 0; padding: 0;
+}
+td.fixedsizenh { 	
+    border-spacing: 0;
+    height: 100px;
+    width: 100px;
+    margin: 0; padding: 0;
+    }
+td.fixedsize:hover{
+box-shadow: inset 0 0 0 99999px rgba(128,128,128,0.2)
+}
+td.fixedsizeperiod { 	
+border-spacing: 0;
+height: 100px;
+width: 60px;
+margin: 0; padding: 0;
+}
+td.dutyfixed{
+    border-spacing: 0;
+    height: 50px;
+    width: 185px;
+    margin: 0; padding: 0;  
+}
+td.dutyfixed:hover{
+    box-shadow: inset 0 0 0 99999px rgba(128,128,128,0.2)
+}
+.mymodal {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: visible; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.mymodal-content {
+background-color: #fefefe;
+margin: 5% auto; /* 15% from the top and centered */
+padding: 20px;
+border: 1px solid #888;
+width: 70%; /* Could be more or less, depending on screen size */
+}
+
+.mymodal-content-small {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 10px;
+    border: 1px solid #888;
+    width: 35%; /* Could be more or less, depending on screen size */    
+}
+
+/* The Close Button */
+.myclose {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.myclose:hover,
+.myclose:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
+.itembooked{
+    background:silver;
+    color: gray;
+    border:none;
+}
+.itemnotbooked{
+    background:whitesmoke;
+    border-left:4px solid #003366;
+    cursor:pointer;
+}
+
+.showitem{
+    display:none;
+}
+.greenitem{
+    color:green;    
+}
+
+.wisbutton{
+    background:whitesmoke;
+    border:1px solid silver;
+}
+.wisbutton:hover{
+    cursor:pointer;
+    background:rgba(0,82,164,0.25);
+    border:1px solid rgb(0,82,164);
+}
+.wispanel{
+    background:whitesmoke;      
+}
+.wispanel:hover{
+    background: #E8E8F8;
+    cursor:pointer;
+}
+.itemselected{
+    background: #E8E8F8;
+}
+.wistab{
+    display:inline-block;
+    width:125px;
+}
+.wistab:hover{
+    background:whitesmoke;
+    cursor:pointer; 
+}
+.wistabactive{
+    display:inline-block;
+    width:125px;
+    background: whitesmoke;
+    font-weight:bold;
+}
+.wisbackground{
+    background-color: #003366;
+}
+.wistextwhite{
+    color: whitesmoke;
+}
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+#sidebar {
+    width: 275px;
+    position: fixed;
+    top: 0;
+    left: 0;    
+    z-index: 900;
+    background: #003366;
+    color: #fff;    
+    overflow: hidden;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2); 
+    display:none;
+    height: 100vh;
+}
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;    
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.wissidebutton{
+    cursor:pointer;     
+}
+.wissidebutton:hover{
+    background: #004080;
+    cursor:pointer;
+}
+.wis-formprogress{
+    padding-left:0px;
+    padding-right:0px;
+    border-bottom:5px solid gray;
+    cursor:pointer;
+}
+.wis-formprogress:hover{
+    font-weight: bold;
+}
+
+.wis-formprogress-active{
+    padding-left:0px;
+    padding-right:0px; 
+    border-bottom:5px solid green;
+    cursor:pointer;    
+}
+.wis-formprogress-active:hover{
+    font-weight: bold;
+}
+
+.wis-thisform{
+    font-weight: bold;
+}
+
+.wis-h1-text{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.wis-h2-text{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.wis-h3-text{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.wis-3-text{
+    font-size: 15px;
+}
+
+.wis-loading-icon{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 999;
+    display:none;
+    color: #003366;
+    width:200px;
+    height:200px;    
+    margin-left: -100px;
+    
+}
+
+i.wis-deletebin {
+    font-size:15px;    
+}
+
+i.wis-deletebin:hover {
+    cursor:pointer;
+    color:red;
+    -webkit-transform: scale(1.3);
+}
+
+i.wis-adduser {
+    font-size:15px;    
+}
+
+i.wis-adduser:hover {
+    cursor:pointer;
+    color:green;
+    -webkit-transform: scale(1.3);
+}
+
+i.wis-additem {
+    font-size:15px;    
+}
+
+i.wis-additem:hover {
+    cursor:pointer;
+    color:green;
+    -webkit-transform: scale(1.3);
+}
+
+p.wis-large{
+    font-size:18px;
+}
+p.wis-med{
+    font-size:15px;
+}
+p.wis-small{
+    font-size:10px
+}
+i.wis-sync {
+    color:gray;
+    font-size:15px;    
+}
+
+i.wis-sync:hover {
+    cursor:pointer;
+    color:green;
+    -webkit-transform: scale(1.3);
+}
+
+i.wis-nav-btn{
+    font-size: 25px;
+    padding: 7px 0px 7px 0px;
+    border-bottom:2px solid transparent; 
+    cursor:pointer; 
+}
+
+i.wis-nav-btn:hover {
+    border-bottom:2px solid whitesmoke;    
+}   
+
+i.wis-nav-btn-active{
+    font-size: 25px;
+    padding: 7px 0px 7px 0px;
+    border-bottom:2px solid whitesmoke;  
+}
+.wis-bookingcat-btn {
+    border-bottom:2px solid transparent;    
+    cursor:pointer;  
+}
+
+.wis-bookingcat-btn:hover {
+    border-bottom:2px solid #003366;    
+    cursor:pointer;  
+}
+
+.wis-bookingcat-btn-selected {
+    background-color:whitesmoke;    
+    cursor:pointer;  
+}
+
+.wis-bookingitem-btn{
+    cursor:pointer; 
+}
+
+.wis-bookingitem-btn:hover {
+    border-bottom:2px solid gray;    
+    cursor:pointer;  
+}
+
+.wis-bookingitem-btn-selected {
+    border-bottom:2px solid #003366;    
+    cursor:pointer;   
+}
+
+.wis-interview-btn{
+    background:whitesmoke;
+    border:1px solid silver;
+    cursor:pointer;
+}
+.wis-interview-btn:hover{
+    cursor:pointer; 
+    border:1px solid rgb(0,82,164);
+}
+
+.wis-interview-closed-btn{
+    background:whitesmoke;
+    border:1px solid silver;
+}
+
+.wis-interview-item{
+    background:whitesmoke;
+    border:1px solid silver;
+}
+
+.wis-interview-booked{
+    background: #E8E8F8;
+    border:1px solid silver;
+}
+
+.wis-interview-locked{
+    background: mistyrose;
+    border:1px solid silver;
+}
+
+.wis-image-crop {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    border:2px solid gainsboro;
+}
+.wis-profile-pic {
+  display: inline;
+  margin: 0 auto;
+  height: auto;
+  width: 100%;  
+}
+
+.wis-image-crop-large {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    border:2px solid whitesmoke;
+}
+
+.wis-house-DEV {
+    border-top: 4px solid rgb(0,82,164);    
+}
+
+.wis-house-CHAM {
+    border-top: 4px solid rgb(255, 206, 4);
+}
+
+.wis-house-OZAN {
+    border-top: 4px solid rgb(12, 151, 2)
+}
+
+.wis-house-MCC {
+    border-top: 4px solid rgb(200,0,0);
+}
+
+.wis-house-display-DEV {
+    border-top: 10px solid rgb(0,82,164);    
+    border-bottom: 10px solid rgb(0,82,164);    
+}
+
+.wis-house-display-CHAM {
+    border-top: 10px solid rgb(255, 206, 4);
+    border-bottom: 10px solid rgb(255, 206, 4);
+}
+
+.wis-house-display-OZAN {
+    border-top: 10px solid rgb(12, 151, 2);
+    border-bottom: 10px solid rgb(12, 151, 2);
+}
+
+.wis-house-display-MCC {
+    border-top: 10px solid rgb(200,0,0);
+    border-bottom: 10px solid rgb(200,0,0);
+}
+
+i.wis-pin{
+    font-size:16px;
+}
+
+i.wis-pin:hover{
+    
+    cursor:pointer;
+    color:green;
+    -webkit-transform: scale(1.3);
+}
+
+i.wis-pin-active{
+    color:green;
+    font-size:16px;
+}
+
+.wis-title{
+    font-size:20px;
+    color:#003366;
+    font-weight:bold;
+}
+
+.wis-title-lg{
+    font-size:30px;
+    color:#003366;
+    font-weight:bold;
+}
+
+.wis-title-sm{
+    font-size:14px;
+    color:#003366;
+    font-weight:bold;
+}
+
+.wis-text-sm{
+    font-size:13px;
+    color:#003366;    
+}
+
+.wis-notice-check{
+    font-size: 18px;
+    color:gray;
+    
+}
+
+.wis-notice-check:hover{
+    color:#0c9702;
+    cursor:pointer;
+    -webkit-transform: scale(1.3);
+}
+
+.wis-dropdown-item {
+    display:block;
+    width:100%;
+    clear:both;
+    white-space:nowrap;
+}
+
+.wis-print {
+    color: purple;
+    font-size: 20px;
+}
+.wis-print:hover{
+    cursor:pointer;
+    -webkit-transform: scale(1.3);
+}
+.wis-generateMeeting {
+    color: darkgreen;
+    font-size: 20px;
+}
+.wis-generateMeeting:hover{
+    cursor:pointer;
+    -webkit-transform: scale(1.3);
+}
+td.wis-cal-cell{
+    width:15%;
+    border:1px solid silver;
+    background:gainsboro;
+    margin: 0;
+    padding: 0;
+    border-spacing: 0;
+}
+td.wis-cal-period{
+    width:10%;
+    margin: 0;
+    padding: 0;
+    border-spacing: 0;
+}
+
+i.wis-interviewtype {
+    color:silver;
+    font-size:18px   
+ }
+
+ i.wis-interviewtype-active {
+    color:green;
+    font-size:18px   
+ }
+
+i.wis-interviewnote {
+   color:silver;
+   font-size:18px   
+}
+
+i.wis-interviewnote:hover {
+    cursor:pointer;
+    color:green;
+    -webkit-transform: scale(1.3);
+}
+
+i.wis-deletenote {
+    color:silver;
+    font-size:18px   
+ }
+ 
+ i.wis-deletenote:hover {
+     cursor:pointer;
+     color:red;
+     -webkit-transform: scale(1.3);
+ }
+
+ i.wis-awaynote {
+    color:silver;
+    font-size:18px   
+ }
+ 
+ i.wis-awaynote:hover {
+     cursor:pointer;
+     color:orange;
+     -webkit-transform: scale(1.3);
+ }
+
+i.wis-interviewnote-active {    
+    font-size:18px;
+    color:green;    
+}
+
+i.wis-interviewnote-active:hover {
+    cursor:pointer;
+    color:orange; 
+    -webkit-transform: scale(1.3);   
+}
+
+.wis-list-move {   
+    background-color: lightsteelblue;
+    font: whitesmoke;    
+}
+
+.wis-button{
+    background:whitesmoke;
+    border:1px solid silver;
+    font-size:16px;
+}
+
+.wis-button:hover{
+    cursor:pointer;
+    background:rgba(0,82,164,0.25);
+    border:1px solid rgb(0,82,164);
+}
+
+.wis-subselect-title{
+    background-color: #003366;
+    color:whitesmoke;
+    font-weight: bold;
+    margin-bottom:1px;
+}
+
+.wis-subselect-disabled{
+    background-color: silver;    
+    margin-bottom:1px;
+    border:1px solid gainsboro;
+    color:dimgray;
+}
+
+.wis-subselect-item{
+    background-color: whitesmoke;
+    border:1px solid silver;
+    margin-bottom:1px;
+}
+.wis-subselect-item:hover{
+    border:1px solid #003366;
+    cursor:pointer;
+}
+.wis-subselect-active{
+    background-color: rgba(135,206,250,0.5);
+    border:1px solid #003366;
+    margin-bottom:1px;
+}
+.wis-subselect-reserve{
+    background-color: rgba(144,238,144,0.5);
+    border:1px solid #003366;
+    margin-bottom:1px;
+}
+.wis-subselect-reserve-1st{
+    background-color: rgba(144,238,144,0.5);
+    border:1px solid #003366;
+    margin-bottom:1px;
+}
+.wis-subselect-reserve-2nd{
+    background-color: rgba(240,230,140,0.5);
+    border:1px solid #003366;
+    margin-bottom:1px;
+}
+
+.wis-teams-complete{
+    background-color:#E8E8F8;
+}
+
+.wis-teams-archived{
+    background-color: mistyrose;
+}
+
+.wis-teams-none{
+    background-color: whitesmoke;
+}
+.wis-teams-icon{
+    color:lightgray;
+    font-size:25px;
+}
+.wis-teams-icon:hover{
+    color:#464EB8;
+    cursor:pointer;
+}
+.wis-teams-icon-active{
+    color:#464EB8;
+    font-size:25px;
+}
+.wis-modal-teams{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+
+.wis-modal-teams-content{
+    background-color: #003366;
+    margin: 10% auto; /* 15% from the top and centered */
+    padding: 20px;   
+    width: 30%; /* Could be more or less, depending on screen size */
+    min-height: 30%;
+    color:whitesmoke;
+}
+
+.wis-modal-fileupload{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.wis-modal-fileupload-content{
+    background-color: #003366;
+    margin: 10% auto; /* 15% from the top and centered */
+    padding: 20px;   
+    width: 50%; /* Could be more or less, depending on screen size */
+    min-height: 20%;
+    color:whitesmoke;
+}
+
+.wis-modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.wis-imgwrap {
+    position: relative;
+    
+}
+.wis-imgwrap .wis-close {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    z-index: 100;
+    color:red;
+    font-size:15px;
+}
+
+.wis-imgwrap .wis-close:hover{
+    cursor:pointer;
+    -webkit-transform: scale(1.5);   
+}
+.wis-innertable table{
+    width:100%;
+}
+.youtube-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+.youtube-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
