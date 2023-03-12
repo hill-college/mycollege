@@ -53,14 +53,13 @@
                             <script>
                                 let date = new Date();
                                 let day = date.getDate
-                                let weekday = date.getDay();
                                 let month = date.getMonth() + 1;
                                 let year = date.getFullYear();
                                 let hour = date.getHours();
                                 let minute = date.getMinutes();
                                 let second = date.getSeconds();
                                 
-                                document.getElementById("date").innerHTML = `${weekday} ${day} ${month}`;
+                                document.getElementById("date").innerHTML = `${day} ${month} ${getFullYear}`;
                                 </script>
                         </div>
                     </div>
