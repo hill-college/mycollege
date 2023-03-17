@@ -3,6 +3,15 @@
 <html lang="en" ng-app="janisonReplay" id="offline-app" resolution-limited="true">
 
 <head>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5B4L2KV');</script>
+  <!-- End Google Tag Manager -->
+
   <meta charset="UTF-8" />
   <!-- <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" /> -->
   <title>HC Assesment Browser</title>
@@ -44137,6 +44146,10 @@
 </head>
 
 <body ng-controller="appController as ac" ng-cloak>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5B4L2KV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
   <div class="layout" layout-width="1024" layout-height="768" style="width: 1024px; height: 768px; min-height: 768px;">
     <!-- APP HEADER -->
     <div class="header action-bar">
@@ -44154,7 +44167,7 @@
             <rect x="24.009" y="22" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" width="1.981" height="12" />
           </svg>
           <span class="sr-only">{{'Zoom'}}</span>
-        </button>
+        </button>   
         <ul class="tp-zoom-levels" aria-labelledby="zoom-submenu-button">
 
           <li ng-repeat="level in zc.serviceAvailable()" ng-click="zc.changeZoom(level)"
@@ -45808,7 +45821,7 @@
             gotoDiscoveryPage();
           }
           else {
-            self.headingText = "Connecting, won't be long...";
+            self.headingText = "Connecting to testing server...";
             self.isConnectingState = true;
           }
         }
@@ -45856,7 +45869,7 @@
           self.isBusy = true;
 
           self.connectBtnState = "busy";
-          self.errorText = "";
+          self.errorText = "Error connecting to test server...";
           var newConfig = new ServerConfig(self.serverUrl, self.serverPath);
 
           function isZoomQueryParamsAvailable() {
@@ -45900,7 +45913,7 @@
           self.checkConnectivity();
           self.isShowTryAgainBtn = false;
           self.isConnectingState = true;
-          self.headingText = "Connecting, won't be long...";
+          self.headingText = "Connecting to test server...";
           setTimeout(function () {
             internetCheckActions(self.isOnline);
           }, 1000);
@@ -46323,5 +46336,3 @@
 </body>
 
 </html>
-
-
