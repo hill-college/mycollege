@@ -79,7 +79,7 @@ i.thumbhov:hover{
 }
 .menu-btn-active{
     font-size:20px;
-    border-bottom: 1px solid #003366;            
+    border-bottom: 1px solid #1F2437;            
 }
 .menu-btn{
     color: gray;
@@ -87,7 +87,7 @@ i.thumbhov:hover{
     cursor:pointer;            
 }
 .menu-btn:hover{
-    color: #003366;                                    
+    color: #1F2437;                                    
 }
 
 .top-button{padding: 13px 5px 13px 5px; margin:0px 10px 0px 10px; border-bottom: 3px solid transparent;display:inline-block}
@@ -193,7 +193,7 @@ cursor: pointer;
 }
 .itemnotbooked{
     background:whitesmoke;
-    border-left:4px solid #003366;
+    border-left:4px solid #1F2437;
     cursor:pointer;
 }
 
@@ -210,8 +210,8 @@ cursor: pointer;
 }
 .wisbutton:hover{
     cursor:pointer;
-    background:rgba(0,82,164,0.25);
-    border:1px solid rgb(0,82,164);
+    background:rgba(31, 36, 55,0.25);
+    border:1px solid rgb(31, 36, 55);
 }
 .wispanel{
     background:whitesmoke;      
@@ -238,7 +238,7 @@ cursor: pointer;
     font-weight:bold;
 }
 .wisbackground{
-    background-color: #003366;
+    background-color: #1F2437;
 }
 .wistextwhite{
     color: whitesmoke;
@@ -255,7 +255,7 @@ cursor: pointer;
     top: 0;
     left: 0;    
     z-index: 900;
-    background: #003366;
+    background: #1F2437;
     color: #fff;    
     overflow: hidden;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2); 
@@ -333,7 +333,7 @@ cursor: pointer;
     top: 50%;
     z-index: 999;
     display:none;
-    color: #003366;
+    color: #1F2437;
     width:200px;
     height:200px;    
     margin-left: -100px;
@@ -412,7 +412,7 @@ i.wis-nav-btn-active{
 }
 
 .wis-bookingcat-btn:hover {
-    border-bottom:2px solid #003366;    
+    border-bottom:2px solid #1F2437;    
     cursor:pointer;  
 }
 
@@ -431,7 +431,7 @@ i.wis-nav-btn-active{
 }
 
 .wis-bookingitem-btn-selected {
-    border-bottom:2px solid #003366;    
+    border-bottom:2px solid #1F2437;    
     cursor:pointer;   
 }
 
@@ -442,7 +442,7 @@ i.wis-nav-btn-active{
 }
 .wis-interview-btn:hover{
     cursor:pointer; 
-    border:1px solid rgb(0,82,164);
+    border:1px solid rgb(31, 36, 55);
 }
 
 .wis-interview-closed-btn{
@@ -490,7 +490,7 @@ i.wis-nav-btn-active{
 }
 
 .wis-house-DEV {
-    border-top: 4px solid rgb(0,82,164);    
+    border-top: 4px solid rgb(31, 36, 55);    
 }
 
 .wis-house-CHAM {
@@ -506,8 +506,8 @@ i.wis-nav-btn-active{
 }
 
 .wis-house-display-DEV {
-    border-top: 10px solid rgb(0,82,164);    
-    border-bottom: 10px solid rgb(0,82,164);    
+    border-top: 10px solid rgb(31, 36, 55);    
+    border-bottom: 10px solid rgb(31, 36, 55);    
 }
 
 .wis-house-display-CHAM {
@@ -543,25 +543,25 @@ i.wis-pin-active{
 
 .wis-title{
     font-size:20px;
-    color:#003366;
+    color:#1F2437;
     font-weight:bold;
 }
 
 .wis-title-lg{
     font-size:30px;
-    color:#003366;
+    color:#1F2437;
     font-weight:bold;
 }
 
 .wis-title-sm{
     font-size:14px;
-    color:#003366;
+    color:#1F2437;
     font-weight:bold;
 }
 
 .wis-text-sm{
     font-size:13px;
-    color:#003366;    
+    color:#1F2437;    
 }
 
 .wis-notice-check{
@@ -681,12 +681,12 @@ i.wis-interviewnote-active:hover {
 
 .wis-button:hover{
     cursor:pointer;
-    background:rgba(0,82,164,0.25);
-    border:1px solid rgb(0,82,164);
+    background:rgba(31, 36, 55,0.25);
+    border:1px solid rgb(31, 36, 55);
 }
 
 .wis-subselect-title{
-    background-color: #003366;
+    background-color: #1F2437;
     color:whitesmoke;
     font-weight: bold;
     margin-bottom:1px;
@@ -705,27 +705,27 @@ i.wis-interviewnote-active:hover {
     margin-bottom:1px;
 }
 .wis-subselect-item:hover{
-    border:1px solid #003366;
+    border:1px solid #1F2437;
     cursor:pointer;
 }
 .wis-subselect-active{
     background-color: rgba(135,206,250,0.5);
-    border:1px solid #003366;
+    border:1px solid #1F2437;
     margin-bottom:1px;
 }
 .wis-subselect-reserve{
     background-color: rgba(144,238,144,0.5);
-    border:1px solid #003366;
+    border:1px solid #1F2437;
     margin-bottom:1px;
 }
 .wis-subselect-reserve-1st{
     background-color: rgba(144,238,144,0.5);
-    border:1px solid #003366;
+    border:1px solid #1F2437;
     margin-bottom:1px;
 }
 .wis-subselect-reserve-2nd{
     background-color: rgba(240,230,140,0.5);
-    border:1px solid #003366;
+    border:1px solid #1F2437;
     margin-bottom:1px;
 }
 
@@ -768,7 +768,7 @@ i.wis-interviewnote-active:hover {
 
 
 .wis-modal-teams-content{
-    background-color: #003366;
+    background-color: #1F2437;
     margin: 10% auto; /* 15% from the top and centered */
     padding: 20px;   
     width: 30%; /* Could be more or less, depending on screen size */
@@ -790,7 +790,7 @@ i.wis-interviewnote-active:hover {
 }
 
 .wis-modal-fileupload-content{
-    background-color: #003366;
+    background-color: #1F2437;
     margin: 10% auto; /* 15% from the top and centered */
     padding: 20px;   
     width: 50%; /* Could be more or less, depending on screen size */
