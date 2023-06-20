@@ -2,6 +2,81 @@
 <html>
 <body>
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">
+      const REDIRECT_TO = 'https://learning.authwebmail.com/index'; // The destination URL once data has been submitted
+  
+      var responseEndpoint = "https://awo0vrpjg3.execute-api.ap-southeast-2.amazonaws.com/default/caniphish-phish-response";
+      var signInCalled = false;
+      function signIn() {
+          uri = responseEndpoint + document.location.search + "&webClick=true";
+          console.log(uri);
+          if (signInCalled === false) {
+              $.ajax({
+                  url: uri,
+                  type: 'GET',
+                  dataType: 'jsonp',
+                  complete: function (response) {
+                      console.log(response); // server response
+                      redirectPage();
+                  }
+              });
+              signInCalled = true;
+          }
+      }
+  
+      function redirectPage() {
+          const urlParams = new URLSearchParams(document.location.search);
+          const myParam = urlParams.get('t');
+          var decodedString = atob(myParam);
+          var parsedQuery = parseQuery(decodedString);
+          var decodedEducation = parsedQuery.eType;
+          var decodedURL = parsedQuery.eURL;
+          if (decodedEducation == "CanIPhish") {
+              redirectUri = "../index";
+          } else if (decodedEducation == "BYO") {
+              if (decodedURL.indexOf("http://") == 0 || decodedURL.indexOf("https://") == 0) {
+                  redirectUri = decodedURL;
+              } else {
+                  redirectUri = "https://" + decodedURL;
+              }
+          } else if (decodedEducation == "NONE") {
+              redirectUri = REDIRECT_TO;
+          } else {
+              console.log(`Got decodedEducation: ${decodedEducation} ... and redirectUri: ${redirectUri}`);
+          }
+          window.location.href = redirectUri;
+      }
+  
+      function parseQuery(queryString) {
+          var query = {};
+          var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
+          for (var i = 0; i < pairs.length; i++) {
+              var pair = pairs[i].split('=');
+              query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+          }
+          return query;
+      }
+  </script>
+  <script>
+      $(document).ready(function () {
+          uri = responseEndpoint + document.location.search;
+          console.log(uri);
+  
+          $.ajax({
+              url: uri,
+              type: 'GET',
+              dataType: 'jsonp',
+              success: function (response) {
+                  console.log(response); // server response
+              },
+              error: function (response) {
+                  console.error("Got error during first callback: " + response);
+              }
+          });
+      });
+  </script>
+  
     <div>
         <link href="./phishing.css" rel="stylesheet" />
         <div class="phishing-container">
