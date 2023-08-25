@@ -89,16 +89,25 @@
                         </div>
                         <div class='col-sm-auto'>
                             <p class='text-center' style='font-size:22px'><b id="currentDate"></b></p> 
-                                <script>
-                                    // Get the current date
-                                    var currentDate = new Date();
-                            
-                                    // Format the date as a string
-                                    var dateString = currentDate.toDateString();
-                            
-                                    // Display the date in the HTML element with id "currentDate"
-                                    document.getElementById("currentDate").textContent = dateString;
-                                </script>
+                            <script>
+                                // Get the current date
+                                var currentDate = new Date();
+                        
+                                // Array of month abbreviations
+                                var monthAbbreviations = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                        
+                                // Get day, date, and month
+                                var day = currentDate.toLocaleDateString('en-US', { weekday: 'long' });
+                                var date = currentDate.getDate();
+                                var monthIndex = currentDate.getMonth();
+                                var month = monthAbbreviations[monthIndex];
+                        
+                                // Format the date as "DAY DD, MMM"
+                                var formattedDate = day + " " + date + ", " + month;
+                        
+                                // Display the formatted date in the HTML element with id "currentDate"
+                                document.getElementById("currentDate").textContent = formattedDate;
+                            </script>
 
                         </div>
 
