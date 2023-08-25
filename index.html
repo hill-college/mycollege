@@ -88,7 +88,17 @@
                             </script> 
                         </div>
                         <div class='col-sm-auto'>
-                            <p class='text-center' style='font-size:22px'><b>UNDER DEVELOPMENT</b></p> 
+                            <p class='text-center' style='font-size:22px'><b id="currentDate"></b></p> 
+                                <script>
+                                    // Get the current date
+                                    var currentDate = new Date();
+                            
+                                    // Format the date as a string
+                                    var dateString = currentDate.toDateString();
+                            
+                                    // Display the date in the HTML element with id "currentDate"
+                                    document.getElementById("currentDate").textContent = dateString;
+                                </script>
 
                         </div>
 
@@ -127,7 +137,7 @@
                 <div class="col text-center">
         <div class="card top-link" style='width:110px;background-color:#1f2437' onclick="window.open('http://edu.hillcollege.services')">
             <img src="/images/crest.png" style="height: 50px;padding-bottom:5px;">                           
-            <p class="card-text mt-2" style='color:whitesmoke'>MyCollege</p>
+            <p class="card-text mt-2" style='color:whitesmoke'>Website</p>
         </div>        
     </div>   
 
