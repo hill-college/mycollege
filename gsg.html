@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+	<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9LWK9P53F1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9LWK9P53F1');
+</script>
+
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">	
+        <link rel="stylesheet" href="/css/all.css">	
+        <link rel="stylesheet" href="/css/wisdom.css">	        
+        <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+		<title>MyCollege - GSG Links</title>
+        <link rel="icon" type="image/x-icon" href="/images/crest.png">
+
+		<style>
+		body {
+			background-color:gainsboro;                       
+            font-size:13px;            
+        }
+        .cropped1 {
+            width: 80px; /* width of container */
+            height: 80px; /* height of container */
+            object-fit: cover;
+            object-position: 20% 0px;             
+            border: 3px solid whitesmoke;
+        } 
+        .cropped1:hover{
+            border: 3px solid #bb7321;
+            cursor:pointer;
+        }                     
+        </style>
+        <script src="/js/jquery-3.4.1.min.js"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+	</head>
+    <body>
+
+        <div id='body'>                 
+            <div class="container-fluid" style='background-color:#1f2437;'>
+    <div class="row no-gutters">
+      <div class="col-auto"><img  class="mt-3 mb-3 mr-2" src="images/crest.png" style="height: 40px;cursor:pointer" onclick="window.open('/','_self')"></div>
+      <div class="col my-auto" style="color:white;font-size:20px">MyCollege - GSG Links</div>
+      <div class="col-auto my-auto">
+        <span><img src="/images/link.png" style='height:30px;padding-bottom:5px' onclick="window.open('/','_self')" title="Links"></i></span>      
+        <span><img src="/images/info.png" style='height:30px;padding-bottom:5px' onclick="window.open('/contact','_self')" title="Contact Info"></i></span> 
+      </div>
+    </div> 
+
+            <div style='color:whitesmoke;'>
+                <div class='container'>
+                    <div class='row justify-content-center justify-content-md-between'>
+                        <div class='col-sm-auto'>
+                            <p class='text-center' style='font-size:22px;'><b id="greeting"></b></p>
+                            <script>
+                                var myDate = new Date();
+                                var hrs = myDate.getHours();
+                            
+                                var greet;
+                            
+                                if (hrs < 8)
+                                    greet = 'Good Morning 👋';
+                                else if (hrs >= 13 && hrs <= 17)
+                                    greet = 'Good Afternoon ☀️';
+                                else if (hrs >= 17 && hrs <= 24)
+                                    greet = 'Good Evening 🌙';
+                            
+                                document.getElementById('greeting').innerHTML =
+                                '<p>' + greet + '</p>';
+                            </script> 
+                        </div>
+                        <div class='col-sm-auto'>
+                            <p class='text-center' style='font-size:22px'><b id="currentDate"></b></p> 
+                            <script>
+                                // Get the current date
+                                var currentDate = new Date();
+                        
+                                // Array of month abbreviations
+                                var monthAbbreviations = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                        
+                                // Get day, date, and month
+                                var day = currentDate.toLocaleDateString('en-US', { weekday: 'long' });
+                                var date = currentDate.getDate();
+                                var monthIndex = currentDate.getMonth();
+                                var month = monthAbbreviations[monthIndex];
+                        
+                                // Format the date as "DAY DD, MMM"
+                                var formattedDate = day + " " + date + ", " + month;
+                        
+                                // Display the formatted date in the HTML element with id "currentDate"
+                                document.getElementById("currentDate").textContent = formattedDate;
+                            </script>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wisbackground">
+
+            <div class="container">
+                <div class="row justify-content-center">
+            <div class="col text-center">
+        <div class="card top-link" style='width:110px;background-color:#1f2437' onclick="window.open('https://hillcollege.wixsite.com/revamp/games')">
+            <img src='/images/game.png' style='height:50px;padding-bottom:5px'>                           
+            <p class="card-text mt-2" style='color:whitesmoke'>Game Centre</p>
+        </div>        
+    </div>
+                <div class="col text-center">
+        <div class="card top-link" style='width:110px;background-color:#1f2437' onclick="window.open('https://www.canva.com/brand/join?token=kQ_9YtED5phQmrczky6tlg&brandingVariant=edu&referrer=hcaccess-mycollege_linkpage')">
+            <img src='/images/canva.png' style='height:50px;padding-bottom:5px'>                           
+            <p class="card-text mt-2" style='color:whitesmoke'>Canva Access</p>
+        </div>        
+    </div>
+                <div class="col text-center">
+        <div class="card top-link" style='width:110px;background-color:#1f2437' onclick="window.open('https://hillcollege.wixsite.com/revamp/resource-centre')">
+            <img src='/images/folder.png' style='height:50px;padding-bottom:5px'>                           
+            <p class="card-text mt-2" style='color:whitesmoke'>HC Resources</p>
+        </div>        
+    </div>
+                <div class="col text-center">
+        <div class="card top-link" style='width:110px;background-color:#1f2437' onclick="window.open('https://www.cognitoforms.com/HILLCOLLEGE1/IssueReport')">
+            <img src="/images/warn.png" style="height: 50px;padding-bottom:5px;">                           
+            <p class="card-text mt-2" style='color:whitesmoke'>HC Report</p>
+        </div>        
+    </div>
+                <div class="col text-center">
+        <div class="card top-link" style='width:110px;background-color:#1f2437' onclick="window.open('http://support.gsg.wa.edu.au')">
+            <img src="/images/help.png" style="height: 50px;padding-bottom:5px;">                           
+            <p class="card-text mt-2" style='color:whitesmoke'>IT Support</p>
+        </div>        
+    </div>   
+
+        </div>
+            </div>
+
+        </div>
+        
+        <div>
+            <div class="container p-2" id="links">
+                <div class="row mb-2 " onclick="window.open('http://edu.hillcollege.org','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#1f2437;display:flex' >
+    <div style='margin:auto auto'> <img src="/images/crest.png"  style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>HC Website</h6>    
+    </div>
+</div>
+
+<div class="row mb-2 " onclick="window.open('https://my.gsg.wa.edu.au/Documents/GSG%20Map.pdf','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#1f2437;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/building.png' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>GSG Campus Map</h6>
+    <p>Find exactly where you classroom is with ease!</p>    
+    </div>
+</div>
+
+<div class="row mb-2 " onclick="window.open('https://hillcollege.edclub.com/','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#1f2437;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/keyboard.png' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>TypingClub</h6>
+    <p>Practice your typing skills with TypingClub. Access anytime using <strong>Office 365</strong> with your GSG account.</p>    
+    </div>
+</div>
+
+<div class="row mb-2 " onclick="window.open('https://counselling.hillcollege.org','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#1f2437;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/meet.png' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Counselling Booking</h6>
+    <p>Book to meet with our counselling team and receive some support for yourself.</p>    
+    </div>
+</div>
+
+<div class="row mb-2 " onclick="window.open('https://hillcollege.speedtestcustom.com/','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#1f2437;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/warn.png' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Device Speed Test</h6>
+    <p>Test your devices' speed with the HC custom speed test service.</p>    
+    </div>
+</div>
+
+<script>(function(d){var s = d.createElement("script");s.setAttribute("data-account", "43sjg7vpMl");s.setAttribute("src", "https://cdn.userway.org/widget.js");(d.body || d.head).appendChild(s);})(document)</script>
+
+<script src="//code.tidio.co/hhudyozrwbg5mspfeam4v497x7kb56tu.js" async></script>
+
+</body>
+
+</html>
