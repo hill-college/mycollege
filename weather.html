@@ -7,14 +7,14 @@
 </head>
 <body>
 
-<h1>Current Weather in Albany, WA</h1>
+<h1>Current Weather in Kalgan, WA</h1>
 <p id="temperature"></p>
 <p id="weather-description"></p>
 
 <script>
     function getWeather() {
         const apiKey = 'c7a15be9528017f83416edba807228cc';
-        const city = 'Albany,au';
+        const city = 'Kalgan,au';
         const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
         fetch(apiUrl)
