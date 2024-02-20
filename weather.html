@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albany Weather</title>
+</head>
+<body>
+
+<h1>Current Weather in Albany, WA</h1>
+<p id="temperature"></p>
+<p id="weather-description"></p>
+
+<script>
+    function getWeather() {
+        const apiKey = 'c7a15be9528017f83416edba807228cc';
+        const city = 'Albany,au';
+        const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const temperature = data.main.temp;
+                const weatherDescription = data.weather[0].description;
+
+                // Display temperature as text
+                document.getElementById('temperature').innerText = `Temperature: ${temperature}°C`;
+
+                // Display weather description and corresponding emoji
+                const weatherEmoji = getWeatherEmoji(weatherDescription);
+                document.getElementById('weather-description').innerText = `Weather: ${weatherDescription} ${weatherEmoji}`;
+            })
+            .catch(error => {
+                console.error('Error fetching weather data:', error);
+                document.getElementById('temperature').innerText = 'Failed to fetch temperature.';
+            });
+    }
+
+    function getWeatherEmoji(description) {
+        // Map weather descriptions to corresponding emojis
+        const emojiMap = {
+            'clear sky': '☀️',
+            'few clouds': '🌤️',
+            'scattered clouds': '🌥️',
+            'broken clouds': '☁️',
+            'shower rain': '🌧️',
+            'rain': '🌧️',
+            'thunderstorm': '⛈️',
+            'snow': '❄️',
+            'mist': '🌫️'
+        };
+
+        // Use the emoji corresponding to the weather description, or a default emoji
+        return emojiMap[description.toLowerCase()] || '❓';
+    }
+
+    // Call the function on page load
+    document.addEventListener('DOMContentLoaded', getWeather);
+</script>
+
+</body>
+</html>
