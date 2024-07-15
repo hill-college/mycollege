@@ -2,16 +2,6 @@
 <html lang="en">
 	<head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9LWK9P53F1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9LWK9P53F1');
-</script>
-
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">		
@@ -22,7 +12,7 @@
         <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
-		<title>MyCollege - GSG Links</title>
+		<title>MyCollege - Links</title>
         <link rel="icon" type="image/x-icon" href="/images/crest.png">
 
 		<style>
@@ -56,7 +46,7 @@
                 margin-right: 10px;
             }
         </style>
-        
+
 	</head>
     <body>
 
@@ -74,9 +64,8 @@
             <div class="container-fluid" style='background-color:#1f2437;'>
     <div class="row no-gutters">
       <div class="col-auto"><img  class="mt-3 mb-3 mr-2" src="images/crest.png" style="height: 40px;cursor:pointer" onclick="window.open('/')"></div>
-      <div class="col my-auto" style="color:white;font-size:20px">MyCollege - GSG Links</div>
+      <div class="col my-auto" style="color:white;font-size:20px">MyCollege Portal - STAFF</div>
       <div class="col-auto my-auto">
-        <span><img src="/images/link.png" style='height:30px;padding-bottom:5px' onclick="window.open('/','_self')" title="Links"></i></span>      
         <span><img src="/images/info.png" style='height:30px;padding-bottom:5px' onclick="window.open('/contact','_self')" title="Contact Info"></i></span> 
       </div>
     </div> 
@@ -92,9 +81,9 @@
                             
                                 var greet;
                             
-                                if (hrs < 13)
+                                if (hrs < 12)
                                     greet = 'Good Morning 👋';
-                                else if (hrs >= 13 && hrs <= 17)
+                                else if (hrs >= 12 && hrs <= 17)
                                     greet = 'Good Afternoon ☀️';
                                 else if (hrs >= 17 && hrs <= 24)
                                     greet = 'Good Evening 🌙';
@@ -124,55 +113,55 @@
                                 // Display the formatted date in the HTML element with id "currentDate"
                                 document.getElementById("currentDate").textContent = formattedDate;
                             </script>
-<p id="temperature"></p>
-<p id="weather-description"></p>
-
+                            <p id="temperature"></p>
+                            <p id="weather-description"></p>
 <script>
-function getWeather() {
-const apiKey = 'c7a15be9528017f83416edba807228cc';
-const city = 'kalgan,au';
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    function getWeather() {
+        const apiKey = 'c7a15be9528017f83416edba807228cc';
+        const city = 'kalgan,au';
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-fetch(apiUrl)
-.then(response => response.json())
-.then(data => {
-const temperature = data.main.temp;
-const weatherDescription = data.weather[0].description;
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const temperature = data.main.temp;
+                const weatherDescription = data.weather[0].description;
 
-// Display temperature as text
-document.getElementById('temperature').innerText = `${temperature}°C`;
+                // Display temperature as text
+                document.getElementById('temperature').innerText = `${temperature}°C`;
 
-// Display weather description and corresponding emoji
-const weatherEmoji = getWeatherEmoji(weatherDescription);
-document.getElementById('weather-description').innerText = `${weatherEmoji}`;
-})
-.catch(error => {
-console.error('Error fetching weather data:', error);
-document.getElementById('temperature').innerText = 'Error Temperature';
-});
-}
+                // Display weather description and corresponding emoji
+                const weatherEmoji = getWeatherEmoji(weatherDescription);
+                document.getElementById('weather-description').innerText = `${weatherEmoji}`;
+            })
+            .catch(error => {
+                console.error('Error fetching weather data:', error);
+                document.getElementById('temperature').innerText = 'Error Temperature';
+            });
+    }
 
-function getWeatherEmoji(description) {
-// Map weather descriptions to corresponding emojis
-const emojiMap = {
-'clear sky': '☀️',
-'few clouds': '🌤️',
-'scattered clouds': '🌥️',
-'broken clouds': '☁️',
-'shower rain': '🌧️',
-'rain': '🌧️',
-'thunderstorm': '⛈️',
-'snow': '❄️',
-'mist': '🌫️'
-};
+    function getWeatherEmoji(description) {
+        // Map weather descriptions to corresponding emojis
+        const emojiMap = {
+            'clear sky': '☀️',
+            'few clouds': '🌤️',
+            'scattered clouds': '🌥️',
+            'broken clouds': '☁️',
+            'shower rain': '🌧️',
+            'rain': '🌧️',
+            'thunderstorm': '⛈️',
+            'snow': '❄️',
+            'mist': '🌫️'
+        };
 
-// Use the emoji corresponding to the weather description, or a default emoji
-return emojiMap[description.toLowerCase()] || '🌤️';
-}
+        // Use the emoji corresponding to the weather description, or a default emoji
+        return emojiMap[description.toLowerCase()] || '🌤️';
+    }
 
-// Call the function on page load
-document.addEventListener('DOMContentLoaded', getWeather);
+    // Call the function on page load
+    document.addEventListener('DOMContentLoaded', getWeather);
 </script>
+
                         </div>
 
                     </div>
@@ -212,7 +201,7 @@ document.addEventListener('DOMContentLoaded', getWeather);
             <img src="/images/question.png" style="height: 50px;padding-bottom:5px;">                           
             <p class="card-text mt-2" style='color:whitesmoke'>IT Support</p>
         </div>        
-    </div> 
+    </div>   
 
         </div>
             </div>
@@ -229,14 +218,44 @@ document.addEventListener('DOMContentLoaded', getWeather);
     <h6>HC Website</h6>    
     </div>
 </div>
-
-<div class="row mb-2 " onclick="window.open('https://my.gsg.wa.edu.au/Documents/GSG%20Map.pdf','_blank')" >
+ 
+<div class="row mb-2 " onclick="window.open('https://albanys-big-sleep-out-2024.raiselysite.com/t/hillcollege','_blank')" >
     <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#1f2437;display:flex' >
-    <div style='margin:auto auto'> <img src='/images/building.png' style='height:50px;padding-bottom:5px'></div>
+    <div style='margin:auto auto'> <img src='/images/sleeping-bag.png' style='height:50px;padding-bottom:5px'></div>
     </div>
     <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
-    <h6>GSG Campus Map</h6>
-    <p>Find exactly where you classroom is with ease!</p>    
+    <h6>Albany Big Sleep Out 2024</h6>
+    <p>Support the Hill College team to raise money for homelessness at the Big Sleep Out (Saturday 24th August).</p>    
+    </div>
+</div>
+
+<div class="row mb-2 " onclick="window.open('https://www.canva.com/brand/join?token=kQ_9YtED5phQmrczky6tlg&brandingVariant=edu&referrer=hcaccess-mycollege_linkpage','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#1f2437;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/canva.png' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Canva Access</h6>
+    <p>Get free Canva Pro provided by Hill College - simply join the 'team'!</p>    
+    </div>
+</div>
+
+<div class="row mb-2 " onclick="window.open('https://www.cognitoforms.com/HILLCOLLEGE1/MediaConsentForm ','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#1f2437;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/task.png' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Media Consent Form</h6>
+    <p>Provide your consent before taking part of photography/videography or other media capturing to feature you in anything.</p>    
+    </div>
+</div>
+
+<div class="row mb-2 " onclick="window.open('https://outlook.office365.com/owa/calendar/HillCollege@greatsoutherngrammar.onmicrosoft.com/bookings/','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#1f2437;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/meet.png' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>Counselling Booking</h6>
+    <p>Book to meet with our counselling team and receive some support for yourself.</p>    
     </div>
 </div>
 
@@ -247,6 +266,16 @@ document.addEventListener('DOMContentLoaded', getWeather);
     <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
     <h6>TypingClub</h6>
     <p>Practice your typing skills with TypingClub. Access anytime using <strong>Office 365</strong> with your GSG account.</p>    
+    </div>
+</div>
+
+<div class="row mb-2 " onclick="window.open('https://www.cognitoforms.com/HILLCOLLEGE1/OSHReportForm','_blank')" >
+    <div class="col-lg-1 col-sm-2 text-center rounded shadow-sm" style='height:80px;background:#1f2437;display:flex' >
+    <div style='margin:auto auto'> <img src='/images/alert.png' style='height:50px;padding-bottom:5px'></div>
+    </div>
+    <div class="col wisbutton ml-3 shadow-sm p-2 rounded">
+    <h6>OSH Incident Report</h6>
+    <p>Report any Occupational Safety and Health incident to Hill College Services.</p>    
     </div>
 </div>
 
