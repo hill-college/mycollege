@@ -119,52 +119,77 @@
                             </script>
                             <p id="temperature"></p>
                             <p id="weather-description"></p>
-<script>
-    function getWeather() {
-        const apiKey = 'c7a15be9528017f83416edba807228cc';
-        const city = 'kalgan,au';
-        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const temperature = data.main.temp;
-                const weatherDescription = data.weather[0].description;
-
-                // Display temperature as text
-                document.getElementById('temperature').innerText = `${temperature}°C`;
-
-                // Display weather description and corresponding emoji
-                const weatherEmoji = getWeatherEmoji(weatherDescription);
-                document.getElementById('weather-description').innerText = `${weatherEmoji}`;
-            })
-            .catch(error => {
-                console.error('Error fetching weather data:', error);
-                document.getElementById('temperature').innerText = 'Error Temperature';
-            });
-    }
-
-    function getWeatherEmoji(description) {
-        // Map weather descriptions to corresponding emojis
-        const emojiMap = {
-            'clear sky': '☀️',
-            'few clouds': '🌤️',
-            'scattered clouds': '🌥️',
-            'broken clouds': '☁️',
-            'shower rain': '🌧️',
-            'rain': '🌧️',
-            'thunderstorm': '⛈️',
-            'snow': '❄️',
-            'mist': '🌫️'
-        };
-
-        // Use the emoji corresponding to the weather description, or a default emoji
-        return emojiMap[description.toLowerCase()] || '🌤️';
-    }
-
-    // Call the function on page load
-    document.addEventListener('DOMContentLoaded', getWeather);
-</script>
+                            <p id="uv-index"></p>
+                            <script>
+                                function getWeather() {
+                                    const apiKey = 'c7a15be9528017f83416edba807228cc';
+                                    const city = 'kalgan,au';
+                                    const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+                            
+                                    fetch(weatherApiUrl)
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            const temperature = Math.round(data.main.temp); // Round temperature to nearest integer
+                                            const weatherDescription = data.weather[0].description;
+                            
+                                            // Display rounded temperature
+                                            document.getElementById('temperature').innerText = `${temperature}°C`;
+                            
+                                            // Display weather description and corresponding emoji
+                                            const weatherEmoji = getWeatherEmoji(weatherDescription);
+                                            document.getElementById('weather-description').innerText = `${weatherEmoji}`;
+                            
+                                            // Fetch UV index data based on location coordinates
+                                            const { lat, lon } = data.coord;
+                                            getUVIndex(lat, lon, apiKey);
+                                        })
+                                        .catch(error => {
+                                            console.error('Error fetching weather data:', error);
+                                            document.getElementById('temperature').innerText = 'Error Temperature';
+                                        });
+                                }
+                            
+                                function getWeatherEmoji(description) {
+                                    const emojiMap = {
+                                        'clear sky': '☀️',
+                                        'few clouds': '🌤️',
+                                        'scattered clouds': '🌥️',
+                                        'broken clouds': '☁️',
+                                        'shower rain': '🌧️',
+                                        'rain': '🌧️',
+                                        'thunderstorm': '⛈️',
+                                        'snow': '❄️',
+                                        'mist': '🌫️'
+                                    };
+                                    return emojiMap[description.toLowerCase()] || '🌤️';
+                                }
+                            
+                                function getUVIndex(lat, lon, apiKey) {
+                                    const uvApiUrl = `https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+                            
+                                    fetch(uvApiUrl)
+                                        .then(response => response.json())
+                                        .then(data => {
+                                            const uvIndex = Math.round(data.value); // Round UV index to nearest integer
+                                            const uvEmoji = getUVEmoji(uvIndex);
+                                            document.getElementById('uv-index').innerText = `UV: ${uvIndex} ${uvEmoji}`;
+                                        })
+                                        .catch(error => {
+                                            console.error('Error fetching UV index:', error);
+                                            document.getElementById('uv-index').innerText = 'Error UV';
+                                     });
+                                }
+                            
+                                function getUVEmoji(uvIndex) {
+                                    if (uvIndex <= 2) return '🟢'; // Low
+                                    if (uvIndex <= 5) return '🟡'; // Moderate
+                                    if (uvIndex <= 7) return '🟠'; // High
+                                    if (uvIndex <= 10) return '🔴'; // Very high
+                                    return '🟣'; // Extreme
+                                }
+                            
+                                document.addEventListener('DOMContentLoaded', getWeather);
+                            </script>
 
                         </div>
 
