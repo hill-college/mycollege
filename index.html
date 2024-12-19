@@ -117,7 +117,7 @@
                                 // Display the formatted date in the HTML element with id "currentDate"
                                 document.getElementById("currentDate").textContent = formattedDate;
                             </script>
-                            <p GSG is id="temperature"></p> <p id="weather-description"></p> <p Today id="uv-index"></p>
+                            <p id="temperature"></p> <p id="weather-description"></p> <p id="uv-index"></p>
                             <script>
                                 function getWeather() {
                                     const apiKey = 'c7a15be9528017f83416edba807228cc';
@@ -131,7 +131,7 @@
                                             const weatherDescription = data.weather[0].description;
                             
                                             // Display rounded temperature
-                                            document.getElementById('temperature').innerText = `${temperature}°C`;
+                                            document.getElementById('temperature').innerText = `GSG is ${temperature}°C`;
                             
                                             // Display weather description and corresponding emoji
                                             const weatherEmoji = getWeatherEmoji(weatherDescription);
@@ -170,7 +170,7 @@
                                         .then(data => {
                                             const uvIndex = Math.round(data.value); // Round UV index to nearest integer
                                             const uvEmoji = getUVEmoji(uvIndex);
-                                            document.getElementById('uv-index').innerText = `UV: ${uvIndex} ${uvEmoji}`;
+                                            document.getElementById('uv-index').innerText = `Today's UV: ${uvIndex} ${uvEmoji}`;
                                         })
                                         .catch(error => {
                                             console.error('Error fetching UV index:', error);
