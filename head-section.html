@@ -1,0 +1,122 @@
+<bold>DEVELOPMENTAL TESTING IS CURRENTLY IN PROGRESS</bold>
+<div style='color:whitesmoke;'>
+        <div class='container'>
+            <div class='row justify-content-center justify-content-md-between'>
+                <div class='col-sm-auto'>
+                    <p class='text-center' style='font-size:22px;'><b id="greeting"></b></p>
+                    <script>
+                        var myDate = new Date();
+                        var hrs = myDate.getHours();
+                    
+                        var greet;
+                    
+                        if (hrs < 12)
+                            greet = 'Good Morning 👋';
+                        else if (hrs >= 12 && hrs <= 17)
+                            greet = 'Good Afternoon ☀️';
+                        else if (hrs >= 17 && hrs <= 24)
+                            greet = 'Good Evening 🌙';
+                    
+                        document.getElementById('greeting').innerHTML =
+                        '<p>' + greet + '</p>';
+                    </script> 
+                </div>
+                <div class='col-sm-auto'>
+                    <p class='text-center' style='font-size:22px'><b id="currentDate"></b></p> 
+                    <script>
+                        // Get the current date
+                        var currentDate = new Date();
+                
+                        // Array of month abbreviations
+                        var monthAbbreviations = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                
+                        // Get day, date, and month
+                        var day = currentDate.toLocaleDateString('en-US', { weekday: 'long' });
+                        var date = currentDate.getDate();
+                        var monthIndex = currentDate.getMonth();
+                        var month = monthAbbreviations[monthIndex];
+                
+                        // Format the date as "DAY DD, MMM"
+                        var formattedDate = day + ", " + date + " " + month;
+                
+                        // Display the formatted date in the HTML element with id "currentDate"
+                        document.getElementById("currentDate").textContent = formattedDate;
+                    </script>
+                    <p id="temperature"></p> <p id="weather-description"></p> <p id="uv-index"></p>
+                    <script>
+                        function getWeather() {
+                            const apiKey = 'c7a15be9528017f83416edba807228cc';
+                            const city = 'kalgan,au';
+                            const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+                    
+                            fetch(weatherApiUrl)
+                                .then(response => response.json())
+                                .then(data => {
+                                    const temperature = Math.round(data.main.temp); // Round temperature to nearest integer
+                                    const weatherDescription = data.weather[0].description;
+                    
+                                    // Display rounded temperature
+                                    document.getElementById('temperature').innerText = `GSG is ${temperature}°C`;
+                    
+                                    // Display weather description and corresponding emoji
+                                    const weatherEmoji = getWeatherEmoji(weatherDescription);
+                                    document.getElementById('weather-description').innerText = `${weatherEmoji}`;
+                    
+                                    // Fetch UV index data based on location coordinates
+                                    const { lat, lon } = data.coord;
+                                    getUVIndex(lat, lon, apiKey);
+                                })
+                                .catch(error => {
+                                    console.error('Error fetching weather data:', error);
+                                    document.getElementById('temperature').innerText = 'Error Temperature';
+                                });
+                        }
+                    
+                        function getWeatherEmoji(description) {
+                            const emojiMap = {
+                                'clear sky': '☀️',
+                                'few clouds': '🌤️',
+                                'scattered clouds': '🌥️',
+                                'broken clouds': '☁️',
+                                'shower rain': '🌧️',
+                                'rain': '🌧️',
+                                'thunderstorm': '⛈️',
+                                'snow': '❄️',
+                                'mist': '🌫️'
+                            };
+                            return emojiMap[description.toLowerCase()] || '🌤️';
+                        }
+                    
+                        function getUVIndex(lat, lon, apiKey) {
+                            const uvApiUrl = `https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+                    
+                            fetch(uvApiUrl)
+                                .then(response => response.json())
+                                .then(data => {
+                                    const uvIndex = Math.round(data.value); // Round UV index to nearest integer
+                                    const uvEmoji = getUVEmoji(uvIndex);
+                                    document.getElementById('uv-index').innerText = `Today's UV: ${uvIndex} ${uvEmoji}`;
+                                })
+                                .catch(error => {
+                                    console.error('Error fetching UV index:', error);
+                                    document.getElementById('uv-index').innerText = 'Error UV';
+                             });
+                        }
+                    
+                        function getUVEmoji(uvIndex) {
+                            if (uvIndex <= 2) return '🟢'; // Low
+                            if (uvIndex <= 5) return '🟡'; // Moderate
+                            if (uvIndex <= 7) return '🟠'; // High
+                            if (uvIndex <= 10) return '🔴'; // Very high
+                            return '🟣'; // Extreme
+                        }
+                    
+                        document.addEventListener('DOMContentLoaded', getWeather);
+                    </script>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
