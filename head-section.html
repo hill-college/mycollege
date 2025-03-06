@@ -1,3 +1,4 @@
+ <head>
  <style>
 		body {
 			background-color:gainsboro;                       
@@ -30,6 +31,7 @@
             margin-right: 10px;
         }
     </style>
+</head>
 
 <bold style="color:white;">MAINTENANCE AND TESTING IS IN PROGRES | <a href="https://status.hillcollege.org/maintenance/518152" style="color:white;">status.hillcollege.org</a> | <a href="https://my.hillcollege.org/weather" style="color:white;">GSG Weather Info</a></bold>
 
@@ -55,6 +57,7 @@
                         '<p>' + greet + '</p>';
                     </script> 
                 </div>
+
                 <div class='col-sm-auto'>
                     <p class='text-center' style='font-size:22px'><b id="currentDate"></b></p> 
                     <script>
@@ -76,6 +79,7 @@
                         // Display the formatted date in the HTML element with id "currentDate"
                         document.getElementById("currentDate").textContent = formattedDate;
                     </script>
+
                     <p id="temperature"></p> <p id="weather-description"></p> <p id="uv-index"></p>
                     <script>
                         function getWeather() {
