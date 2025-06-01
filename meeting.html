@@ -526,7 +526,7 @@
     <script>
         // Zoho OAuth Configuration
         const ZOHO_CONFIG = {
-            clientId: 'YOUR_ZOHO_CLIENT_ID', // Replace with your Zoho client ID
+            clientId: '1002-7005438075.WDDQNPYO9KX07PQC5GAE7G54Q9FJXB', // Replace with your Zoho client ID
             redirectUri: 'https://my.hillcollege.org/meeting/auth/callback', // Your redirect URL
             scope: 'ZohoDirectory.read.all,profile.read',
             authUrl: 'https://accounts.zoho.com/oauth/v2/auth',
@@ -608,7 +608,7 @@
                     body: new URLSearchParams({
                         grant_type: 'authorization_code',
                         client_id: ZOHO_CONFIG.clientId,
-                        client_secret: 'YOUR_ZOHO_CLIENT_SECRET', // You'll need to set this
+                        client_secret: '68fefdd9852ed0d6375bc01de4d86ba140552f5138', // You'll need to set this
                         code: authCode,
                         redirect_uri: ZOHO_CONFIG.redirectUri
                     })
