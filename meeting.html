@@ -24,8 +24,14 @@
             padding: 1rem 2rem;
             display: flex;
             align-items: center;
-            gap: 1rem;
+            justify-content: space-between;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         .logo {
@@ -45,6 +51,105 @@
             color: white;
             font-size: 24px;
             font-weight: 600;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: white;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background-color: #BB7321;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .logout-btn {
+            background-color: transparent;
+            color: #c4c8d7;
+            border: 1px solid #c4c8d7;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background-color: #c4c8d7;
+            color: #1f2437;
+        }
+
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 80px);
+            padding: 2rem;
+        }
+
+        .login-card {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .login-logo {
+            width: 80px;
+            height: 80px;
+            background-color: #BB7321;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 32px;
+            margin: 0 auto 2rem;
+        }
+
+        .login-card h2 {
+            color: #1f2437;
+            font-size: 28px;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-card p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .zoho-login-btn {
+            background-color: #BB7321;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .zoho-login-btn:hover {
+            background-color: #a86420;
         }
 
         .container {
@@ -271,6 +376,19 @@
             display: none;
         }
 
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 80px);
+            font-size: 18px;
+            color: #1f2437;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
         @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr;
@@ -279,24 +397,61 @@
             
             .header {
                 padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .header-left {
+                width: 100%;
+                justify-content: center;
             }
             
             .welcome-card h2 {
                 font-size: 24px;
+            }
+
+            .user-info {
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <div class="logo">HC</div>
-        <h1>Hill College Meeting Portal</h1>
+        <div class="header-left">
+            <div class="logo">HC</div>
+            <h1>Hill College Meeting Portal</h1>
+        </div>
+        <div class="user-info hidden" id="userInfo">
+            <div class="user-avatar" id="userAvatar"></div>
+            <span id="userDisplayName"></span>
+            <button class="logout-btn" onclick="logout()">Sign Out</button>
+        </div>
     </header>
 
-    <div class="container">
+    <!-- Login Screen -->
+    <div class="login-container" id="loginContainer">
+        <div class="login-card">
+            <div class="login-logo">HC</div>
+            <h2>Welcome to Hill College</h2>
+            <p>Sign in with your Zoho Directory account to access the meeting portal</p>
+            <button class="zoho-login-btn" onclick="initiateZohoLogin()">
+                <span>🔐</span>
+                Sign in with Zoho Directory
+            </button>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading hidden" id="loadingScreen">
+        <div>Loading your profile...</div>
+    </div>
+
+    <!-- Main Application -->
+    <div class="container hidden" id="mainApp">
         <main class="main-content" id="mainContent">
             <div class="welcome-card">
-                <h2>Welcome back, Charlie!</h2>
+                <h2 id="welcomeMessage">Welcome back!</h2>
                 <p>Ready to join your next meeting or connect with colleagues?</p>
             </div>
 
@@ -309,7 +464,7 @@
                     </div>
                     <div class="input-group">
                         <label for="displayName">Your Name</label>
-                        <input type="text" id="displayName" placeholder="Enter your name" value="Charlie" required>
+                        <input type="text" id="displayName" placeholder="Enter your name" required readonly>
                     </div>
                     <button type="submit" class="join-btn">Join Meeting</button>
                     <div class="error-message" id="errorMessage"></div>
@@ -369,6 +524,16 @@
     </div>
 
     <script>
+        // Zoho OAuth Configuration
+        const ZOHO_CONFIG = {
+            clientId: 'YOUR_ZOHO_CLIENT_ID', // Replace with your Zoho client ID
+            redirectUri: 'https://my.hillcollege.org/meeting/auth/callback', // Your redirect URL
+            scope: 'ZohoDirectory.read.all,profile.read',
+            authUrl: 'https://accounts.zoho.com/oauth/v2/auth',
+            tokenUrl: 'https://accounts.zoho.com/oauth/v2/token',
+            apiUrl: 'https://directory.zoho.com/api/v1'
+        };
+
         const validMeetingCodes = {
             'FACULTY001': 'Faculty Weekly Meeting',
             'STUDENT123': 'Student Council Meeting',
@@ -378,6 +543,229 @@
             'DEMO456': 'Demo Conference'
         };
 
+        let currentUser = null;
+
+        // Initialize the application
+        window.addEventListener('load', function() {
+            // Check if returning from OAuth callback
+            const urlParams = new URLSearchParams(window.location.search);
+            const authCode = urlParams.get('code');
+            const error = urlParams.get('error');
+
+            if (error) {
+                console.error('OAuth error:', error);
+                showLoginScreen();
+                return;
+            }
+
+            if (authCode) {
+                // Handle OAuth callback
+                handleOAuthCallback(authCode);
+                return;
+            }
+
+            // Check for existing session
+            const savedToken = sessionStorage.getItem('zoho_access_token');
+            const savedUser = sessionStorage.getItem('user_data');
+
+            if (savedToken && savedUser) {
+                currentUser = JSON.parse(savedUser);
+                showMainApp();
+            } else {
+                showLoginScreen();
+            }
+        });
+
+        // Initiate Zoho OAuth login
+        function initiateZohoLogin() {
+            const authParams = new URLSearchParams({
+                response_type: 'code',
+                client_id: ZOHO_CONFIG.clientId,
+                scope: ZOHO_CONFIG.scope,
+                redirect_uri: ZOHO_CONFIG.redirectUri,
+                access_type: 'offline',
+                state: generateRandomState()
+            });
+
+            // Store state for security validation
+            sessionStorage.setItem('oauth_state', authParams.get('state'));
+
+            // Redirect to Zoho OAuth
+            window.location.href = `${ZOHO_CONFIG.authUrl}?${authParams.toString()}`;
+        }
+
+        // Handle OAuth callback
+        async function handleOAuthCallback(authCode) {
+            showLoadingScreen();
+
+            try {
+                // Exchange authorization code for access token
+                const tokenResponse = await fetch(ZOHO_CONFIG.tokenUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({
+                        grant_type: 'authorization_code',
+                        client_id: ZOHO_CONFIG.clientId,
+                        client_secret: 'YOUR_ZOHO_CLIENT_SECRET', // You'll need to set this
+                        code: authCode,
+                        redirect_uri: ZOHO_CONFIG.redirectUri
+                    })
+                });
+
+                const tokenData = await tokenResponse.json();
+
+                if (tokenData.access_token) {
+                    // Store access token
+                    sessionStorage.setItem('zoho_access_token', tokenData.access_token);
+                    
+                    // Fetch user profile
+                    await fetchUserProfile(tokenData.access_token);
+                    
+                    // Clean up URL
+                    window.history.replaceState({}, document.title, 'https://my.hillcollege.org/meeting');
+                } else {
+                    throw new Error('Failed to obtain access token');
+                }
+
+            } catch (error) {
+                console.error('OAuth callback error:', error);
+                alert('Login failed. Please try again.');
+                showLoginScreen();
+            }
+        }
+
+        // Fetch user profile from Zoho Directory
+        async function fetchUserProfile(accessToken) {
+            try {
+                const response = await fetch(`${ZOHO_CONFIG.apiUrl}/users/me`, {
+                    headers: {
+                        'Authorization': `Bearer ${accessToken}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                const userData = await response.json();
+
+                if (userData && userData.data) {
+                    currentUser = {
+                        id: userData.data.id,
+                        firstName: userData.data.firstName,
+                        lastName: userData.data.lastName,
+                        email: userData.data.email,
+                        displayName: userData.data.displayName || `${userData.data.firstName} ${userData.data.lastName}`,
+                        profilePhoto: userData.data.profilePhoto
+                    };
+
+                    // Store user data
+                    sessionStorage.setItem('user_data', JSON.stringify(currentUser));
+                    
+                    showMainApp();
+                } else {
+                    throw new Error('Failed to fetch user profile');
+                }
+
+            } catch (error) {
+                console.error('Profile fetch error:', error);
+                // Fallback to basic profile if Directory API fails
+                try {
+                    const basicResponse = await fetch('https://accounts.zoho.com/oauth/user/info', {
+                        headers: {
+                            'Authorization': `Bearer ${accessToken}`
+                        }
+                    });
+                    const basicData = await basicResponse.json();
+                    
+                    currentUser = {
+                        id: basicData.ZUID,
+                        firstName: basicData.First_Name,
+                        lastName: basicData.Last_Name,
+                        email: basicData.Email,
+                        displayName: `${basicData.First_Name} ${basicData.Last_Name}`,
+                        profilePhoto: null
+                    };
+
+                    sessionStorage.setItem('user_data', JSON.stringify(currentUser));
+                    showMainApp();
+                } catch (fallbackError) {
+                    console.error('Fallback profile fetch error:', fallbackError);
+                    alert('Failed to load user profile. Please try again.');
+                    showLoginScreen();
+                }
+            }
+        }
+
+        // Generate random state for OAuth security
+        function generateRandomState() {
+            return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        }
+
+        // Show different screens
+        function showLoginScreen() {
+            document.getElementById('loginContainer').classList.remove('hidden');
+            document.getElementById('loadingScreen').classList.add('hidden');
+            document.getElementById('mainApp').classList.add('hidden');
+            document.getElementById('userInfo').classList.add('hidden');
+        }
+
+        function showLoadingScreen() {
+            document.getElementById('loginContainer').classList.add('hidden');
+            document.getElementById('loadingScreen').classList.remove('hidden');
+            document.getElementById('mainApp').classList.add('hidden');
+            document.getElementById('userInfo').classList.add('hidden');
+        }
+
+        function showMainApp() {
+            document.getElementById('loginContainer').classList.add('hidden');
+            document.getElementById('loadingScreen').classList.add('hidden');
+            document.getElementById('mainApp').classList.remove('hidden');
+            document.getElementById('userInfo').classList.remove('hidden');
+
+            // Update UI with user data
+            updateUserInterface();
+        }
+
+        // Update UI with user information
+        function updateUserInterface() {
+            if (!currentUser) return;
+
+            // Update welcome message
+            document.getElementById('welcomeMessage').textContent = `Welcome back, ${currentUser.firstName}!`;
+            
+            // Update display name in form
+            document.getElementById('displayName').value = currentUser.displayName;
+            
+            // Update header user info
+            document.getElementById('userDisplayName').textContent = currentUser.displayName;
+            
+            // Update user avatar
+            const userAvatar = document.getElementById('userAvatar');
+            if (currentUser.profilePhoto) {
+                userAvatar.style.backgroundImage = `url(${currentUser.profilePhoto})`;
+                userAvatar.style.backgroundSize = 'cover';
+                userAvatar.textContent = '';
+            } else {
+                userAvatar.textContent = (currentUser.firstName?.[0] || '') + (currentUser.lastName?.[0] || '');
+            }
+        }
+
+        // Logout function
+        function logout() {
+            if (confirm('Are you sure you want to sign out?')) {
+                // Clear stored data
+                sessionStorage.removeItem('zoho_access_token');
+                sessionStorage.removeItem('user_data');
+                sessionStorage.removeItem('oauth_state');
+                
+                currentUser = null;
+                
+                // Return to login screen
+                showLoginScreen();
+            }
+        }
+
+        // Meeting functionality
         document.getElementById('joinForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -421,7 +809,7 @@
             document.getElementById('meetingCode').value = code;
             showSuccess('Connecting to ' + title + '...');
             setTimeout(() => {
-                joinMeeting(code, title, document.getElementById('displayName').value || 'Charlie');
+                joinMeeting(code, title, document.getElementById('displayName').value || currentUser?.displayName || 'User');
             }, 1000);
         }
 
@@ -450,9 +838,3 @@
                 alert('Meeting ended successfully.');
             }
         }
-
-        // Auto-focus on meeting code input
-        document.getElementById('meetingCode').focus();
-    </script>
-</body>
-</html>
