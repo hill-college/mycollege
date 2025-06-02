@@ -435,10 +435,14 @@
             <div class="login-logo">HC</div>
             <h2>Welcome to Hill College</h2>
             <p>Sign in with your Zoho account to access the meeting portal</p>
-            <button class="zoho-login-btn" onclick="initiateZohoLogin()">
-                <span>🔐</span>
-                Sign in with Zoho Directory
-            </button>
+            <button id="zoho-login">Sign in with Zoho Directory</button>
+
+            <script>
+              document.getElementById("zoho-login").addEventListener("click", function () {
+                window.location.href = "https://directory.zoho.com.au/p/7005438075/applications/1002-7005438075.WDDQNPYO9KX07PQC5GAE7G54Q9FJXB/authorize?client_id=68fefdd9852ed0d6375bc01de4d86ba140552f5138&redirect_uri=https://my.hillcollege.org/meeting/auth/callback&response_type=code&scope=openid email profile";
+              });
+            </script>
+            
         </div>
     </div>
 
