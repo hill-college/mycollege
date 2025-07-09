@@ -10,7 +10,7 @@ if (!isset($_GET['code'])) {
 
 $code = $_GET['code'];
 
-$token_url = "https://accounts.zoho.com/oauth/v2/token";
+$token_url = "https://accounts.zoho.com.au/oauth/v2/token";
 
 $data = http_build_query([
     "grant_type" => "authorization_code",
@@ -42,7 +42,7 @@ if (isset($result['access_token'])) {
         ]
     ];
     $context = stream_context_create($opts);
-    $user_info = file_get_contents("https://accounts.zoho.com/oauth/user/info", false, $context);
+    $user_info = file_get_contents("https://accounts.zoho.com.au/oauth/user/info", false, $context);
     $user = json_decode($user_info, true);
 
     // Display user info or redirect
