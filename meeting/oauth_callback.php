@@ -1,6 +1,6 @@
 <?php
-$client_id = "1000.2NG209AZQ63738IDR79FN4H62NQQHZ";
-$client_secret = "dc131a2c34d7fd81a3afcac9c3cf9a7fe621166fa5";
+$client_id = "1000.O2D3H9VI5MJHJWMKX1W3DV1V42CN7V";
+$client_secret = "20761175a1faf1b2f66c30ae8e67a57d359e989d50";
 $redirect_uri = "https://my.hillcollege.org/meeting/oauth_callback.php";
 
 if (!isset($_GET['code'])) {
