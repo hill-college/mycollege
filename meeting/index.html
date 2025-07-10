@@ -434,13 +434,13 @@
     <div class="login-container" id="loginContainer">
         <div class="login-card">
             <div class="login-logo">HC</div>
-            <h2>Sign In to HC Meetings</h2>
+            <h2>Welcome to Hill College Meetings</h2>
             <p>Login using your Zoho account to access the meeting portal</p>
             <button id="zoho-login">Sign In with ZOHO</button>
 
             <script>
               document.getElementById("zoho-login").addEventListener("click", function () {
-                window.location.href = "https://accounts.zoho.com.au/oauth/v2/auth?scope=AaaServer.profile.READ&client_id=1000.O2D3H9VI5MJHJWMKX1W3DV1V42CN7V&response_type=code&access_type=offline&redirect_uri=https://my.hillcollege.org/meeting/oauth_callback.php";
+                window.location.href = "https://accounts.zoho.com.au/oauth/v2/auth?scope=AaaServer.profile.READ&client_id=1000.O2D3H9VI5MJHJWMKX1W3DV1V42CN7V&response_type=code&access_type=offline&redirect_uri=https://hcedu-zoho-auth.netlify.app/.netlify/functions/oauth_callback";
               });
             </script>
             
@@ -533,7 +533,7 @@
         const ZOHO_CONFIG = {
             clientId: '1000.O2D3H9VI5MJHJWMKX1W3DV1V42CN7V',
             clientSecret: '20761175a1faf1b2f66c30ae8e67a57d359e989d50',
-            redirectUri: 'https://my.hillcollege.org/meeting/oauth_callback.php',
+            redirectUri: 'https://hcedu-zoho-auth.netlify.app/.netlify/functions/oauth_callback',
             scope: 'openid profile email',
         };
 
