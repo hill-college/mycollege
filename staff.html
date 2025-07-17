@@ -58,19 +58,6 @@
 	</head>
     <body>
 
-        <script>
-            window.intercomSettings = {
-              api_base: "https://api-iam.intercom.io",
-              app_id: "s1bw6uhu",
-            };
-          </script>
-          
-          
-          <script>
-            // We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/s1bw6uhu'
-            (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/s1bw6uhu';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
-          </script>
-
         <div id='body'>                 
             <div class="container-fluid" style='background-color:#1f2437;'>
     <div class="row no-gutters">
@@ -81,138 +68,15 @@
       </div>
     </div> 
 
-            <div style='color:whitesmoke;'>
-                <div class='container'>
-                    <div class='row justify-content-center justify-content-md-between'>
-                        <div class='col-sm-auto'>
-                            <p class='text-center' style='font-size:22px;'><b id="greeting"></b></p>
-                            <script>
-                                var myDate = new Date();
-                                var hrs = myDate.getHours();
-                            
-                                var greet;
-                            
-                                if (hrs < 12)
-                                    greet = 'Good Morning 👋';
-                                else if (hrs >= 12 && hrs <= 17)
-                                    greet = 'Good Afternoon ☀️';
-                                else if (hrs >= 17 && hrs <= 24)
-                                    greet = 'Good Evening 🌙';
-                            
-                                document.getElementById('greeting').innerHTML =
-                                '<p>' + greet + '</p>';
-                            </script> 
-                        </div>
-                        <div class='col-sm-auto'>
-                            <p class='text-center' style='font-size:22px'><b id="currentDate"></b></p> 
-                            <script>
-                                // Get the current date
-                                var currentDate = new Date();
-                        
-                                // Array of month abbreviations
-                                var monthAbbreviations = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-                        
-                                // Get day, date, and month
-                                var day = currentDate.toLocaleDateString('en-US', { weekday: 'long' });
-                                var date = currentDate.getDate();
-                                var monthIndex = currentDate.getMonth();
-                                var month = monthAbbreviations[monthIndex];
-                        
-                                // Format the date as "DAY DD, MMM"
-                                var formattedDate = day + " " + date + ", " + month;
-                        
-                                // Display the formatted date in the HTML element with id "currentDate"
-                                document.getElementById("currentDate").textContent = formattedDate;
-                            </script>
-                            <p id="temperature"></p>
-                            <p id="weather-description"></p>
-<script>
-    function getWeather() {
-        const apiKey = 'c7a15be9528017f83416edba807228cc';
-        const city = 'kalgan,au';
-        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const temperature = data.main.temp;
-                const weatherDescription = data.weather[0].description;
-
-                // Display temperature as text
-                document.getElementById('temperature').innerText = `${temperature}°C`;
-
-                // Display weather description and corresponding emoji
-                const weatherEmoji = getWeatherEmoji(weatherDescription);
-                document.getElementById('weather-description').innerText = `${weatherEmoji}`;
-            })
-            .catch(error => {
-                console.error('Error fetching weather data:', error);
-                document.getElementById('temperature').innerText = 'Error Temperature';
-            });
-    }
-
-    function getWeatherEmoji(description) {
-        // Map weather descriptions to corresponding emojis
-        const emojiMap = {
-            'clear sky': '☀️',
-            'few clouds': '🌤️',
-            'scattered clouds': '🌥️',
-            'broken clouds': '☁️',
-            'shower rain': '🌧️',
-            'rain': '🌧️',
-            'thunderstorm': '⛈️',
-            'snow': '❄️',
-            'mist': '🌫️'
-        };
-
-        // Use the emoji corresponding to the weather description, or a default emoji
-        return emojiMap[description.toLowerCase()] || '🌤️';
-    }
-
-    // Call the function on page load
-    document.addEventListener('DOMContentLoaded', getWeather);
-</script>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="wisbackground">
-
-            <div class="container">
-                <div class="row justify-content-center">
-            <div class="col text-center">
-        <div class="card top-link" style='width:110px;background-color:#1f2437' onclick="window.open('https://classroom.google.com/c/NjkwNTY4MzI2MjIz?cjc=uyymlvq')">
-            <img src='/images/student.png' style='height:50px;padding-bottom:5px'>                           
-            <p class="card-text mt-2" style='color:whitesmoke'>Classroom</p>
-        </div>        
-    </div>
-                <div class="col text-center">
-        <div class="card top-link" style='width:110px;background-color:#1f2437' onclick="window.open('http://calendar.hillcollege.org')">
-            <img src='/images/calendar.png' style='height:50px;padding-bottom:5px'>                           
-            <p class="card-text mt-2" style='color:whitesmoke'>Calendar</p>
-        </div>        
-    </div>
-    <div class="col text-center">
-        <div class="card top-link" style='width:110px;background-color:#1f2437' onclick="window.open('https://www.cognitoforms.com/HILLCOLLEGE1/IssueReport')">
-            <img src='/images/speakup-white.png' style='height:50px;padding-bottom:5px'>                           
-            <p class="card-text mt-2" style='color:whitesmoke'>Issue Report</p>
-        </div>          
-    </div>
-                <div class="col text-center">
-        <div class="card top-link" style='width:110px;background-color:#1f2437' onclick="window.open('https://my.hillcollege.org/timer.html')">
-            <img src="/images/clock.png" style="height: 50px;padding-bottom:5px;">                           
-            <p class="card-text mt-2" style='color:whitesmoke'>Timer</p>
-        </div>        
-    </div>
-                <div class="col text-center">
-        <div class="card top-link" style='width:110px;background-color:#1f2437' onclick="window.open('mailto:admin@hillcollege.org?subject=IT%20Support%20Request')">
-            <img src="/images/question.png" style="height: 50px;padding-bottom:5px;">                           
-            <p class="card-text mt-2" style='color:whitesmoke'>IT Support</p>
-        </div>        
-    </div>   
+    <div id="header-container"></div>
+    <script>
+      fetch('/head-section.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('header-container').innerHTML = html;
+        })
+        .catch(error => console.error('Error loading header:', error));
+    </script>  
 
         </div>
             </div>
